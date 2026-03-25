@@ -89,3 +89,22 @@ header {
     flex-grow: 1;
     margin-top: 10px;
 }
+@media screen and  (max-width: 500px) {
+    #main{
+        margin-top: 4rem;
+    }
+    #res{
+        width: 300px;
+    }
+    .game{
+        width: 300px;
+        height: 400px;
+    }
+    .row{
+        justify-content: center;
+    }
+    .same{
+        width: 60px;
+        height: 60px;
+    }
+}
