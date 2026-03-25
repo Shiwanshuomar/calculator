@@ -25,9 +25,9 @@ function calculate(){
 }
 function addListners(){
     Array.from(numBtn).forEach((btn)=>{
-        if(btn.textContent!=='='){    
+        if(numbers.includes(btn.textContent)|| operators.includes(btn.textContent)){    
             btn.addEventListener('click',function (dets){
-                console.log(this.textContent);
+                console.log(this.innerHTML);
                 if(res.textContent==0)
                     res.textContent = this.textContent;
                 else
@@ -36,8 +36,15 @@ function addListners(){
         }else if(btn.textContent=='='){
             // calls calculate function
             btn.addEventListener('click',calculate);
+        }else if(btn.textContent=='AC'){
+            btn.addEventListener('click',function(){
+                res.textContent = 0;
+            });
         }else{
-            res.textContent = 0;
+            // Backspace
+            btn.addEventListener('click',function(e){
+                res.textContent = res.textContent.substring(0, res.textContent.length -1);
+            });
         }
     });
     // for clearing the result ;
