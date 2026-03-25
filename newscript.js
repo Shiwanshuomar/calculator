@@ -4,7 +4,7 @@ const clear = document.querySelector("#clear");
 const main = document.querySelector("#main");
 // console.log(numBtn);
 const numbers = ['0','1','2','3','4','5','6','7','8','9'];
-const operators = ['+','-','*','/'];
+const operators = ['+','-','*','/','(',')'];
 function calculate(){
     let stringToBeclaculated = res.textContent;
     try{
@@ -33,9 +33,11 @@ function addListners(){
                 else
                     res.textContent+= this.textContent;
             });
-        }else{
+        }else if(btn.textContent=='='){
             // calls calculate function
             btn.addEventListener('click',calculate);
+        }else{
+            res.textContent = 0;
         }
     });
     // for clearing the result ;
